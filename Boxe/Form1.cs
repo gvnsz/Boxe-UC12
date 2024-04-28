@@ -119,18 +119,70 @@ namespace Boxe
 
         }
 
-        //Botao de busca
         private void tsbBuscar_Click(object sender, EventArgs e)
         {
-            strSql = "select * from CadAlunos where Id=@Id";
-            sqlCon = new SqlConnection(strSql);
+           
+        }
+
+        //Botao de alterar
+        private void tsbAlterar_Click(object sender, EventArgs e)
+        {
+            strSql = "update CadAlunos set Id=@Id, Nome=@Nome, Idade=@Idade, Peso=@Peso, Altura=@Altura, Celular=@Celular, Email=@Email, Cidade=@Cidade, Estado=@Estado, Lutas=@Lutas, Boxrec=@Boxrec, Sexo=@Sexo where Id=tstBusca";
+            sqlCon= new SqlConnection(strCon);
             SqlCommand comando = new SqlCommand(strSql, sqlCon);
 
-            comando.Parameters.Add("@Id",SqlDbType.Int).Value = tstIdBuscar.Text;
+            comando.Parameters.Add("@IdBuscar",SqlDbType.Int).Value = tstBusca.Text;
+
+            //Transforma a selecao do radiobutton em string
+            string sexo = rbMasc.Checked ? "Masculino" : "Feminino";
+
+            comando.Parameters.Add("@Id", SqlDbType.Int).Value = int.Parse(txtId.Text);
+            comando.Parameters.Add("@Nome", SqlDbType.NVarChar).Value = txtNome.Text;
+            comando.Parameters.Add("@Idade", SqlDbType.Int).Value = int.Parse(nudIdade.Text);
+            comando.Parameters.Add("@Peso", SqlDbType.Int).Value = int.Parse(nudPeso.Text);
+            comando.Parameters.Add("@Altura", SqlDbType.Int).Value = int.Parse(nudAltura.Text);
+            comando.Parameters.Add("@Celular", SqlDbType.NVarChar).Value = mtbCelular.Text;
+            comando.Parameters.Add("@Email", SqlDbType.NVarChar).Value = txtEmail.Text;
+            comando.Parameters.Add("@Cidade", SqlDbType.NVarChar).Value = txtCidade.Text;
+            comando.Parameters.Add("@Estado", SqlDbType.NVarChar).Value = cbEstado.Text;
+            comando.Parameters.Add("@Lutas", SqlDbType.Int).Value = int.Parse(nudLutas.Text);
+            comando.Parameters.Add("@Boxrec", SqlDbType.NVarChar).Value = txtBoxrec.Text;
+            comando.Parameters.Add("@Sexo", SqlDbType.NVarChar).Value = sexo;
+
 
             try
             {
-                if(tstIdBuscar.Text == string.Empty)
+                sqlCon.Open();
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Cadastro atualizado.");
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            finally
+            {
+                sqlCon.Close();
+            }
+
+        }
+
+        //Botao de busca
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+
+            strSql = "select * from CadAlunos where Id=@Id";
+            sqlCon = new SqlConnection(strCon);
+            SqlCommand comando = new SqlCommand(strSql, sqlCon);
+
+            comando.Parameters.Add("@Id",SqlDbType.Int).Value = tstBusca.Text;
+
+            try
+            {
+
+                if(tstBusca.Text == string.Empty)
                 {
                     throw new Exception("Voce precisa digitar um ID.");
                 }
@@ -143,7 +195,6 @@ namespace Boxe
                     throw new Exception("Id nao cadastrado!");
                 }
 
-                string sexo = rbMasc.Checked ? "Masculino" : "Feminino";
 
                 txtId.Text = Convert.ToString(dr["Id"]);
                 txtNome.Text = Convert.ToString(dr["Nome"]);
@@ -156,7 +207,7 @@ namespace Boxe
                 cbEstado.Text = Convert.ToString(dr["Estado"]);
                 nudLutas.Text = Convert.ToString(dr["Lutas"]);
                 txtBoxrec.Text = Convert.ToString(dr["Boxrec"]);
-                sexo = Convert.ToString(dr["Sexo"]);
+              
 
             }
 

@@ -38,7 +38,7 @@
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tstIdBuscar = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.tstBusca = new System.Windows.Forms.ToolStripTextBox();
             this.tsbBuscar = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -87,7 +87,7 @@
             this.tsbDelete,
             this.toolStripSeparator1,
             this.tstIdBuscar,
-            this.toolStripTextBox1,
+            this.tstBusca,
             this.tsbBuscar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -134,6 +134,7 @@
             this.tsbAlterar.Size = new System.Drawing.Size(23, 22);
             this.tsbAlterar.Text = "Alterar";
             this.tsbAlterar.ToolTipText = "Alterar cadastro";
+            this.tsbAlterar.Click += new System.EventHandler(this.tsbAlterar_Click);
             // 
             // tsbDelete
             // 
@@ -157,10 +158,12 @@
             this.tstIdBuscar.Size = new System.Drawing.Size(85, 22);
             this.tstIdBuscar.Text = "Buscar por ID:";
             // 
-            // toolStripTextBox1
+            // tstBusca
             // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
+            this.tstBusca.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tstBusca.Name = "tstBusca";
+            this.tstBusca.Size = new System.Drawing.Size(100, 25);
+            this.tstBusca.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
             // tsbBuscar
             // 
@@ -386,6 +389,11 @@
             // 
             this.nudIdade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudIdade.Location = new System.Drawing.Point(12, 162);
+            this.nudIdade.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.nudIdade.Name = "nudIdade";
             this.nudIdade.Size = new System.Drawing.Size(165, 22);
             this.nudIdade.TabIndex = 24;
@@ -394,6 +402,11 @@
             // 
             this.nudLutas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudLutas.Location = new System.Drawing.Point(9, 498);
+            this.nudLutas.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nudLutas.Name = "nudLutas";
             this.nudLutas.Size = new System.Drawing.Size(165, 22);
             this.nudLutas.TabIndex = 25;
@@ -402,6 +415,11 @@
             // 
             this.nudPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPeso.Location = new System.Drawing.Point(11, 210);
+            this.nudPeso.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nudPeso.Name = "nudPeso";
             this.nudPeso.Size = new System.Drawing.Size(165, 22);
             this.nudPeso.TabIndex = 27;
@@ -440,6 +458,11 @@
             // 
             this.nudAltura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudAltura.Location = new System.Drawing.Point(12, 258);
+            this.nudAltura.Maximum = new decimal(new int[] {
+            230,
+            0,
+            0,
+            0});
             this.nudAltura.Name = "nudAltura";
             this.nudAltura.Size = new System.Drawing.Size(165, 22);
             this.nudAltura.TabIndex = 31;
@@ -515,7 +538,7 @@
         private System.Windows.Forms.ToolStripButton tsbDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel tstIdBuscar;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripTextBox tstBusca;
         private System.Windows.Forms.ToolStripButton tsbBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtId;
