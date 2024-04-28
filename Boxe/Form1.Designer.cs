@@ -43,7 +43,6 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtIdade = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,17 +50,28 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtLutas = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtBoxrec = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.mtbCelular = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
             this.rbMasc = new System.Windows.Forms.RadioButton();
             this.rbFem = new System.Windows.Forms.RadioButton();
+            this.nudIdade = new System.Windows.Forms.NumericUpDown();
+            this.nudLutas = new System.Windows.Forms.NumericUpDown();
+            this.nudPeso = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.nudAltura = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIdade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLutas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAltura)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -109,6 +119,7 @@
             this.tsbSalvar.Name = "tsbSalvar";
             this.tsbSalvar.Size = new System.Drawing.Size(23, 22);
             this.tsbSalvar.Text = "Salvar";
+            this.tsbSalvar.Click += new System.EventHandler(this.tsbSalvar_Click);
             // 
             // tsbAlterar
             // 
@@ -192,15 +203,6 @@
             this.txtNome.Size = new System.Drawing.Size(165, 22);
             this.txtNome.TabIndex = 4;
             // 
-            // txtIdade
-            // 
-            this.txtIdade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdade.Location = new System.Drawing.Point(12, 162);
-            this.txtIdade.MaxLength = 2;
-            this.txtIdade.Name = "txtIdade";
-            this.txtIdade.Size = new System.Drawing.Size(165, 22);
-            this.txtIdade.TabIndex = 6;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -225,7 +227,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 187);
+            this.label5.Location = new System.Drawing.Point(7, 283);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 20);
             this.label5.TabIndex = 8;
@@ -240,7 +242,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 235);
+            this.label6.Location = new System.Drawing.Point(5, 379);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 20);
             this.label6.TabIndex = 10;
@@ -250,7 +252,7 @@
             // txtCidade
             // 
             this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidade.Location = new System.Drawing.Point(12, 258);
+            this.txtCidade.Location = new System.Drawing.Point(9, 402);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(165, 22);
             this.txtCidade.TabIndex = 11;
@@ -259,25 +261,17 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 283);
+            this.label7.Location = new System.Drawing.Point(8, 427);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 20);
             this.label7.TabIndex = 12;
             this.label7.Text = "ESTADO:";
             // 
-            // txtLutas
-            // 
-            this.txtLutas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLutas.Location = new System.Drawing.Point(12, 354);
-            this.txtLutas.Name = "txtLutas";
-            this.txtLutas.Size = new System.Drawing.Size(165, 22);
-            this.txtLutas.TabIndex = 15;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 331);
+            this.label8.Location = new System.Drawing.Point(8, 475);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 20);
             this.label8.TabIndex = 14;
@@ -286,7 +280,7 @@
             // txtBoxrec
             // 
             this.txtBoxrec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxrec.Location = new System.Drawing.Point(12, 402);
+            this.txtBoxrec.Location = new System.Drawing.Point(9, 546);
             this.txtBoxrec.Name = "txtBoxrec";
             this.txtBoxrec.Size = new System.Drawing.Size(165, 22);
             this.txtBoxrec.TabIndex = 17;
@@ -295,7 +289,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(8, 379);
+            this.label9.Location = new System.Drawing.Point(6, 523);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 20);
             this.label9.TabIndex = 16;
@@ -306,7 +300,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(8, 427);
+            this.label10.Location = new System.Drawing.Point(4, 571);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 20);
             this.label10.TabIndex = 18;
@@ -315,16 +309,16 @@
             // mtbCelular
             // 
             this.mtbCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbCelular.Location = new System.Drawing.Point(12, 210);
+            this.mtbCelular.Location = new System.Drawing.Point(10, 306);
             this.mtbCelular.Mask = "(00) 00000-0000";
             this.mtbCelular.Name = "mtbCelular";
             this.mtbCelular.Size = new System.Drawing.Size(165, 22);
             this.mtbCelular.TabIndex = 20;
             // 
-            // comboBox1
+            // cbEstado
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Items.AddRange(new object[] {
             "AC",
             "AL",
             "AP",
@@ -351,34 +345,108 @@
             "SP",
             "SE",
             "TO"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 306);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(165, 21);
-            this.comboBox1.TabIndex = 21;
+            this.cbEstado.Location = new System.Drawing.Point(9, 450);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(165, 21);
+            this.cbEstado.TabIndex = 21;
             // 
             // rbMasc
             // 
             this.rbMasc.AutoSize = true;
             this.rbMasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMasc.Location = new System.Drawing.Point(9, 450);
+            this.rbMasc.Location = new System.Drawing.Point(6, 594);
             this.rbMasc.Name = "rbMasc";
             this.rbMasc.Size = new System.Drawing.Size(82, 19);
             this.rbMasc.TabIndex = 22;
             this.rbMasc.TabStop = true;
             this.rbMasc.Text = "Masculino";
             this.rbMasc.UseVisualStyleBackColor = true;
+            this.rbMasc.CheckedChanged += new System.EventHandler(this.rbMasc_CheckedChanged);
             // 
             // rbFem
             // 
             this.rbFem.AutoSize = true;
             this.rbFem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFem.Location = new System.Drawing.Point(97, 450);
+            this.rbFem.Location = new System.Drawing.Point(93, 594);
             this.rbFem.Name = "rbFem";
             this.rbFem.Size = new System.Drawing.Size(77, 19);
             this.rbFem.TabIndex = 23;
             this.rbFem.TabStop = true;
             this.rbFem.Text = "Feminino";
             this.rbFem.UseVisualStyleBackColor = true;
+            this.rbFem.CheckedChanged += new System.EventHandler(this.rbFem_CheckedChanged);
+            // 
+            // nudIdade
+            // 
+            this.nudIdade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudIdade.Location = new System.Drawing.Point(12, 162);
+            this.nudIdade.Name = "nudIdade";
+            this.nudIdade.Size = new System.Drawing.Size(165, 22);
+            this.nudIdade.TabIndex = 24;
+            // 
+            // nudLutas
+            // 
+            this.nudLutas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudLutas.Location = new System.Drawing.Point(9, 498);
+            this.nudLutas.Name = "nudLutas";
+            this.nudLutas.Size = new System.Drawing.Size(165, 22);
+            this.nudLutas.TabIndex = 25;
+            // 
+            // nudPeso
+            // 
+            this.nudPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudPeso.Location = new System.Drawing.Point(11, 210);
+            this.nudPeso.Name = "nudPeso";
+            this.nudPeso.Size = new System.Drawing.Size(165, 22);
+            this.nudPeso.TabIndex = 27;
+            this.nudPeso.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(8, 187);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(94, 20);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "PESO (KG):";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(9, 354);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(165, 22);
+            this.txtEmail.TabIndex = 29;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(8, 331);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 20);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "EMAIL:";
+            // 
+            // nudAltura
+            // 
+            this.nudAltura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudAltura.Location = new System.Drawing.Point(12, 258);
+            this.nudAltura.Name = "nudAltura";
+            this.nudAltura.Size = new System.Drawing.Size(165, 22);
+            this.nudAltura.TabIndex = 31;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(9, 235);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(115, 20);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "ALTURA (CM):";
             // 
             // PagIni
             // 
@@ -387,21 +455,27 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1050, 710);
+            this.Controls.Add(this.nudAltura);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.nudPeso);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.nudLutas);
+            this.Controls.Add(this.nudIdade);
             this.Controls.Add(this.rbFem);
             this.Controls.Add(this.rbMasc);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.mtbCelular);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtBoxrec);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtLutas);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtIdade);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label2);
@@ -416,6 +490,10 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIdade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLutas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAltura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,7 +515,6 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtIdade;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -446,14 +523,21 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBoxrec;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtLutas;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox mtbCelular;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.RadioButton rbFem;
         private System.Windows.Forms.RadioButton rbMasc;
+        private System.Windows.Forms.NumericUpDown nudIdade;
+        private System.Windows.Forms.NumericUpDown nudLutas;
+        private System.Windows.Forms.NumericUpDown nudPeso;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown nudAltura;
+        private System.Windows.Forms.Label label13;
     }
 }
 
