@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagIni));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbNovo = new System.Windows.Forms.ToolStripButton();
@@ -66,6 +67,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.nudAltura = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudIdade)).BeginInit();
@@ -100,6 +103,7 @@
             this.tsbNovo.Name = "tsbNovo";
             this.tsbNovo.Size = new System.Drawing.Size(23, 22);
             this.tsbNovo.Text = "Novo";
+            this.tsbNovo.ToolTipText = "Novo cadastro\r\n";
             this.tsbNovo.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // tsbCancelar
@@ -129,6 +133,7 @@
             this.tsbAlterar.Name = "tsbAlterar";
             this.tsbAlterar.Size = new System.Drawing.Size(23, 22);
             this.tsbAlterar.Text = "Alterar";
+            this.tsbAlterar.ToolTipText = "Alterar cadastro";
             // 
             // tsbDelete
             // 
@@ -138,6 +143,7 @@
             this.tsbDelete.Name = "tsbDelete";
             this.tsbDelete.Size = new System.Drawing.Size(23, 22);
             this.tsbDelete.Text = "Excluir";
+            this.tsbDelete.ToolTipText = "Excluir ";
             // 
             // toolStripSeparator1
             // 
@@ -153,7 +159,6 @@
             // 
             // toolStripTextBox1
             // 
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
             // 
@@ -165,6 +170,7 @@
             this.tsbBuscar.Name = "tsbBuscar";
             this.tsbBuscar.Size = new System.Drawing.Size(23, 22);
             this.tsbBuscar.Text = "Buscar";
+            this.tsbBuscar.Click += new System.EventHandler(this.tsbBuscar_Click);
             // 
             // label1
             // 
@@ -538,6 +544,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown nudAltura;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }
 
