@@ -127,7 +127,7 @@ namespace Boxe
         //Botao de alterar
         private void tsbAlterar_Click(object sender, EventArgs e)
         {
-            strSql = "update CadAlunos set Id=@Id, Nome=@Nome, Idade=@Idade, Peso=@Peso, Altura=@Altura, Celular=@Celular, Email=@Email, Cidade=@Cidade, Estado=@Estado, Lutas=@Lutas, Boxrec=@Boxrec, Sexo=@Sexo where Id=tstBusca";
+            strSql = "update CadAlunos set Id=@Id, Nome=@Nome, Idade=@Idade, Peso=@Peso, Altura=@Altura, Celular=@Celular, Email=@Email, Cidade=@Cidade, Estado=@Estado, Lutas=@Lutas, Boxrec=@Boxrec, Sexo=@Sexo where Id=@tstBusca";
             sqlCon= new SqlConnection(strCon);
             SqlCommand comando = new SqlCommand(strSql, sqlCon);
 
@@ -219,6 +219,44 @@ namespace Boxe
             finally
             {
                 sqlCon.Close();
+            }
+        }
+
+        //Botao de excluir
+        private void tsbDelete_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Deseja excluir este aluno?", "ATENCAO", MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button2)== DialogResult.No) 
+            
+            {
+                MessageBox.Show("Nenhum dado foi excluido.");
+            }
+
+            else
+
+            {
+                strSql = "delete from CadAlunos where Id=@Id";
+                sqlCon = new SqlConnection(strCon);
+                SqlCommand comando = new SqlCommand(strSql, sqlCon);
+
+                comando.Parameters.Add("@Id", SqlDbType.Int).Value = tstBusca.Text;
+
+                try
+                {
+                    sqlCon.Open();
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Cadastro excluido.");
+                }
+
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                finally
+                {
+                    sqlCon.Close();
+                }
+
             }
         }
     }

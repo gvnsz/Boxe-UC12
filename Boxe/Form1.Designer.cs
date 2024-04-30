@@ -145,6 +145,7 @@
             this.tsbDelete.Size = new System.Drawing.Size(23, 22);
             this.tsbDelete.Text = "Excluir";
             this.tsbDelete.ToolTipText = "Excluir ";
+            this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
             // toolStripSeparator1
             // 
@@ -160,7 +161,6 @@
             // 
             // tstBusca
             // 
-            this.tstBusca.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tstBusca.Name = "tstBusca";
             this.tstBusca.Size = new System.Drawing.Size(100, 25);
             this.tstBusca.Click += new System.EventHandler(this.toolStripTextBox1_Click);
