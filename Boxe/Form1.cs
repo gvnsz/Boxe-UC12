@@ -259,5 +259,10 @@ namespace Boxe
 
             }
         }
+
+        private void tsbCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
