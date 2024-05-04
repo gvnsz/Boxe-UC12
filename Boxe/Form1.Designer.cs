@@ -69,6 +69,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnVerTodos = new System.Windows.Forms.Button();
+            this.btnTurmasEspeciais = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudIdade)).BeginInit();
@@ -162,6 +168,7 @@
             // 
             // tstBusca
             // 
+            this.tstBusca.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tstBusca.Name = "tstBusca";
             this.tstBusca.Size = new System.Drawing.Size(100, 25);
             this.tstBusca.Click += new System.EventHandler(this.toolStripTextBox1_Click);
@@ -310,7 +317,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(4, 571);
+            this.label10.Location = new System.Drawing.Point(6, 647);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 20);
             this.label10.TabIndex = 18;
@@ -364,7 +371,7 @@
             // 
             this.rbMasc.AutoSize = true;
             this.rbMasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMasc.Location = new System.Drawing.Point(6, 594);
+            this.rbMasc.Location = new System.Drawing.Point(8, 670);
             this.rbMasc.Name = "rbMasc";
             this.rbMasc.Size = new System.Drawing.Size(82, 19);
             this.rbMasc.TabIndex = 22;
@@ -377,7 +384,7 @@
             // 
             this.rbFem.AutoSize = true;
             this.rbFem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFem.Location = new System.Drawing.Point(93, 594);
+            this.rbFem.Location = new System.Drawing.Point(95, 670);
             this.rbFem.Name = "rbFem";
             this.rbFem.Size = new System.Drawing.Size(77, 19);
             this.rbFem.TabIndex = 23;
@@ -478,6 +485,73 @@
             this.label13.TabIndex = 30;
             this.label13.Text = "ALTURA (CM):";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(9, 571);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(153, 20);
+            this.label14.TabIndex = 32;
+            this.label14.Text = "TURMA ESPECIAL:";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // btnVerTodos
+            // 
+            this.btnVerTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerTodos.Location = new System.Drawing.Point(826, 266);
+            this.btnVerTodos.Name = "btnVerTodos";
+            this.btnVerTodos.Size = new System.Drawing.Size(212, 62);
+            this.btnVerTodos.TabIndex = 34;
+            this.btnVerTodos.Text = "VISUALIZAR TODOS OS ALUNOS";
+            this.btnVerTodos.UseVisualStyleBackColor = true;
+            // 
+            // btnTurmasEspeciais
+            // 
+            this.btnTurmasEspeciais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTurmasEspeciais.Location = new System.Drawing.Point(826, 385);
+            this.btnTurmasEspeciais.Name = "btnTurmasEspeciais";
+            this.btnTurmasEspeciais.Size = new System.Drawing.Size(212, 62);
+            this.btnTurmasEspeciais.TabIndex = 35;
+            this.btnTurmasEspeciais.Text = "VISUALIZAR TURMAS ESPECIAIS";
+            this.btnTurmasEspeciais.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(10, 594);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(61, 19);
+            this.radioButton1.TabIndex = 36;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Infantil\r\n";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(95, 594);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(61, 19);
+            this.radioButton2.TabIndex = 37;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Idosos";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Location = new System.Drawing.Point(10, 619);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(158, 19);
+            this.radioButton3.TabIndex = 38;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Necessidades especiais\r\n";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
             // PagIni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,6 +559,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1050, 710);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.btnTurmasEspeciais);
+            this.Controls.Add(this.btnVerTodos);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.nudAltura);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtEmail);
@@ -571,6 +651,12 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button btnTurmasEspeciais;
+        private System.Windows.Forms.Button btnVerTodos;
     }
 }
 

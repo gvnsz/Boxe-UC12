@@ -57,7 +57,7 @@ namespace Boxe
         private void tsbSalvar_Click(object sender, EventArgs e) 
         {
          
-                strSql = "insert into CadAlunos (Id, Nome, Idade, Peso, Altura, Celular, Email, Cidade, Estado, Lutas, Boxrec, Sexo) values (@Id, @Nome, @Idade, @Peso, @Altura, @Celular, @Email, @Cidade, @Estado, @Lutas, @Boxrec, @Sexo)";
+                strSql = "insert into CadAlunos (Id, Nome, Idade, Peso, Altura, Celular, Email, Cidade, Estado, Lutas, Boxrec, Sexo, TurmaEspecial) values (@Id, @Nome, @Idade, @Peso, @Altura, @Celular, @Email, @Cidade, @Estado, @Lutas, @Boxrec, @Sexo, @TurmaEspecial)";
                 sqlCon = new SqlConnection(strCon);
                 SqlCommand comando = new SqlCommand(strSql, sqlCon);
 
@@ -261,6 +261,11 @@ namespace Boxe
         }
 
         private void tsbCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
         {
 
         }
