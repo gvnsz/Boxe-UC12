@@ -20,7 +20,7 @@ namespace Boxe
 
         //Conectando ao banco
         SqlConnection sqlCon = null; 
-        private string strCon = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Boxe_UC12;Data Source=DESKTOP-5DV16DM\\SQLEXPRESS";
+        private string strCon = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AcadBoxe;Data Source=DESKTOP-5DV16DM\SQLEXPRESS";
         private string strSql = string.Empty;
 
         private void Form1_Load(object sender, EventArgs e)
@@ -131,7 +131,7 @@ namespace Boxe
             sqlCon= new SqlConnection(strCon);
             SqlCommand comando = new SqlCommand(strSql, sqlCon);
 
-            comando.Parameters.Add("@IdBuscar",SqlDbType.Int).Value = tstBusca.Text;
+            comando.Parameters.Add("@IdBuscar",SqlDbType.Int).Value = tstIdBuscar.Text;
 
             //Transforma a selecao do radiobutton em string
             string sexo = rbMasc.Checked ? "Masculino" : "Feminino";
@@ -177,12 +177,12 @@ namespace Boxe
             sqlCon = new SqlConnection(strCon);
             SqlCommand comando = new SqlCommand(strSql, sqlCon);
 
-            comando.Parameters.Add("@Id",SqlDbType.Int).Value = tstBusca.Text;
+            comando.Parameters.Add("@Id",SqlDbType.Int).Value = tstIdBuscar.Text;
 
             try
             {
 
-                if(tstBusca.Text == string.Empty)
+                if(tstIdBuscar.Text == string.Empty)
                 {
                     throw new Exception("Voce precisa digitar um ID.");
                 }
@@ -238,7 +238,7 @@ namespace Boxe
                 sqlCon = new SqlConnection(strCon);
                 SqlCommand comando = new SqlCommand(strSql, sqlCon);
 
-                comando.Parameters.Add("@Id", SqlDbType.Int).Value = tstBusca.Text;
+                comando.Parameters.Add("@Id", SqlDbType.Int).Value = tstIdBuscar.Text;
 
                 try
                 {

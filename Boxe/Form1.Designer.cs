@@ -37,8 +37,8 @@
             this.tsbAlterar = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tstIdBuscar = new System.Windows.Forms.ToolStripLabel();
-            this.tstBusca = new System.Windows.Forms.ToolStripTextBox();
+            this.lblBusca = new System.Windows.Forms.ToolStripLabel();
+            this.tstIdBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.tsbBuscar = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -92,8 +92,8 @@
             this.tsbAlterar,
             this.tsbDelete,
             this.toolStripSeparator1,
+            this.lblBusca,
             this.tstIdBuscar,
-            this.tstBusca,
             this.tsbBuscar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -159,19 +159,19 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // lblBusca
+            // 
+            this.lblBusca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBusca.Name = "lblBusca";
+            this.lblBusca.Size = new System.Drawing.Size(85, 22);
+            this.lblBusca.Text = "Buscar por ID:";
+            // 
             // tstIdBuscar
             // 
-            this.tstIdBuscar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tstIdBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tstIdBuscar.Name = "tstIdBuscar";
-            this.tstIdBuscar.Size = new System.Drawing.Size(85, 22);
-            this.tstIdBuscar.Text = "Buscar por ID:";
-            // 
-            // tstBusca
-            // 
-            this.tstBusca.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tstBusca.Name = "tstBusca";
-            this.tstBusca.Size = new System.Drawing.Size(100, 25);
-            this.tstBusca.Click += new System.EventHandler(this.toolStripTextBox1_Click);
+            this.tstIdBuscar.Size = new System.Drawing.Size(100, 25);
+            this.tstIdBuscar.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
             // tsbBuscar
             // 
@@ -619,8 +619,8 @@
         private System.Windows.Forms.ToolStripButton tsbAlterar;
         private System.Windows.Forms.ToolStripButton tsbDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel tstIdBuscar;
-        private System.Windows.Forms.ToolStripTextBox tstBusca;
+        private System.Windows.Forms.ToolStripLabel lblBusca;
+        private System.Windows.Forms.ToolStripTextBox tstIdBuscar;
         private System.Windows.Forms.ToolStripButton tsbBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtId;
