@@ -225,87 +225,104 @@ namespace Boxe
         }
 
         //botao de busca
+        //deu um trabalho da p!@#$ pra acertar, pior botao
         private void tsbBuscar_Click(object sender, EventArgs e)
         {
-            strSql = "select * from CadAlunos where Id=@Id";
-            sqlCon = new SqlConnection(strCon);
-            SqlCommand comando = new SqlCommand(strSql, sqlCon);
-
-            comando.Parameters.Add("@Id", SqlDbType.Int).Value = tstIdBuscar.Text;
-
             try
             {
-
-                if (tstIdBuscar.Text == string.Empty)
+                int idBuscar;
+                if (!int.TryParse(tstIdBuscar.Text, out idBuscar))
                 {
-                    throw new Exception("Voce precisa digitar um ID.");
-                }
-                sqlCon.Open();
-
-                SqlDataReader dr = comando.ExecuteReader();
-
-                if (dr.HasRows == false)
-                {
-                    throw new Exception("Id nao cadastrado!");
+                    MessageBox.Show("Digite um ID válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
+                using (SqlConnection sqlCon = new SqlConnection(strCon))
+                { 
+                    strSql = "select * from CadAlunos where Id=@Id";
+                    SqlCommand comando = new SqlCommand(strSql, sqlCon);
+                    comando.Parameters.Add("@Id", SqlDbType.Int).Value = idBuscar;
 
-                txtId.Text = Convert.ToString(dr["Id"]);
-                txtNome.Text = Convert.ToString(dr["Nome"]);
-                nudIdade.Text = Convert.ToString(dr["Idade"]);
-                nudPeso.Text = Convert.ToString(dr["Peso"]);
-                nudAltura.Text = Convert.ToString(dr["Altura"]);
-                mtbCelular.Text = Convert.ToString(dr["Celular"]);
-                txtEmail.Text = Convert.ToString(dr["Email"]);
-                txtCidade.Text = Convert.ToString(dr["Cidade"]);
-                cbEstado.Text = Convert.ToString(dr["Estado"]);
-                nudLutas.Text = Convert.ToString(dr["Lutas"]);
-                txtBoxrec.Text = Convert.ToString(dr["Boxrec"]);
+                    sqlCon.Open();
+                    SqlDataReader dr = comando.ExecuteReader();
 
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            txtId.Text = dr["Id"].ToString();
+                            txtNome.Text = dr["Nome"].ToString();
+                            nudIdade.Value = (int)dr["Idade"];
+                            nudPeso.Value = (int)dr["Peso"];
+                            nudAltura.Value = (int)dr["Altura"];
+                            mtbCelular.Text = dr["Celular"].ToString();
+                            txtEmail.Text = dr["Email"].ToString();
+                            txtCidade.Text = dr["Cidade"].ToString();
+                            cbEstado.Text = dr["Estado"].ToString();
+                            nudLutas.Value = (int)dr["Lutas"];
+                            txtBoxrec.Text = dr["Boxrec"].ToString();
+                            if (dr["Sexo"].ToString() == "Masculino")
+                                rbMasc.Checked = true;
+                            else if (dr["Sexo"].ToString() == "Feminino")
+                                rbFem.Checked = true;
+                            if (dr["TurmaEspecial"].ToString() == "Infantil")
+                                rbInfantil.Checked = true;
+                            else if (dr["TurmaEspecial"].ToString() == "Idosos")
+                                rbIdosos.Checked = true;
+                            else if (dr["TurmaEspecial"].ToString() == "Necessidades Especiais")
+                                rbNecEsp.Checked = true;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhum aluno encontrado com o ID especificado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
             }
-
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Ocorreu um erro ao buscar o aluno: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             finally
             {
-                sqlCon.Close();
-            }
+                if (sqlCon != null && sqlCon.State == ConnectionState.Open)
+                {
+                    sqlCon.Close();
+                }
 
-            tsbNovo.Enabled = false;
-            tsbSalvar.Enabled = false;
-            tsbAlterar.Enabled = true;
-            tsbCancelar.Enabled = true;
-            tsbDelete.Enabled = true;
-            tstIdBuscar.Enabled = true;
-            tsbBuscar.Enabled = true;
-            txtNome.Enabled = true;
-            nudIdade.Enabled = true;
-            nudPeso.Enabled = true;
-            nudAltura.Enabled = true;
-            mtbCelular.Enabled = true;
-            txtEmail.Enabled = true;
-            txtCidade.Enabled = true;
-            cbEstado.Enabled = true;
-            nudLutas.Enabled = true;
-            txtBoxrec.Enabled = true;
-            rbMasc.Enabled = true;
-            rbFem.Enabled = true;
-            rbInfantil.Enabled = true;
-            rbIdosos.Enabled = true;
-            rbNecEsp.Enabled = true;
-            tsbBuscar.Text = "";
-            txtNome.Focus();
-           
+                tsbNovo.Enabled = false;
+                tsbSalvar.Enabled = false;
+                tsbAlterar.Enabled = true;
+                tsbCancelar.Enabled = true;
+                tsbDelete.Enabled = true;
+                tstIdBuscar.Enabled = true;
+                tsbBuscar.Enabled = true;
+                txtNome.Enabled = true;
+                nudIdade.Enabled = true;
+                nudPeso.Enabled = true;
+                nudAltura.Enabled = true;
+                mtbCelular.Enabled = true;
+                txtEmail.Enabled = true;
+                txtCidade.Enabled = true;
+                cbEstado.Enabled = true;
+                nudLutas.Enabled = true;
+                txtBoxrec.Enabled = true;
+                rbMasc.Enabled = true;
+                rbFem.Enabled = true;
+                rbInfantil.Enabled = true;
+                rbIdosos.Enabled = true;
+                rbNecEsp.Enabled = true;
+                tsbBuscar.Text = "";
+                txtNome.Focus();
+
+            }
 
         }
 
         //Botao de alterar
         private void tsbAlterar_Click(object sender, EventArgs e)
         {
-            strSql = "update CadAlunos set Id=@Id, Nome=@Nome, Idade=@Idade, Peso=@Peso, Altura=@Altura, Celular=@Celular, Email=@Email, Cidade=@Cidade, Estado=@Estado, Lutas=@Lutas, Boxrec=@Boxrec, Sexo=@Sexo, TurmaEspecial=@TurmaEspecial where Id=@tstIdBuscar";
+            strSql = "update CadAlunos set Id=@Id, Nome=@Nome, Idade=@Idade, Peso=@Peso, Altura=@Altura, Celular=@Celular, Email=@Email, Cidade=@Cidade, Estado=@Estado, Lutas=@Lutas, Boxrec=@Boxrec, Sexo=@Sexo, TurmaEspecial=@TurmaEspecial where Id=@Id";
             sqlCon = new SqlConnection(strCon);
             SqlCommand comando = new SqlCommand(strSql, sqlCon);
 
