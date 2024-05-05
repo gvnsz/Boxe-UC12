@@ -23,9 +23,32 @@ namespace Boxe
         private string strCon = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AcadBoxe;Data Source=DESKTOP-5DV16DM\SQLEXPRESS";
         private string strSql = string.Empty;
 
+        //comportamento quando o form é aberto
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            tsbNovo.Enabled = true;
+            tsbSalvar.Enabled = false;
+            tsbAlterar.Enabled = false;
+            tsbCancelar.Enabled = false;
+            tsbDelete.Enabled = false;
+            tstIdBuscar.Enabled = true;
+            tsbBuscar.Enabled = true;
+            txtId.Enabled = false;
+            txtNome.Enabled = false;
+            nudIdade.Enabled = false;
+            nudPeso.Enabled = false;
+            nudAltura.Enabled = false;
+            mtbCelular.Enabled = false;
+            txtEmail.Enabled = false;
+            txtCidade.Enabled = false;
+            cbEstado.Enabled = false;
+            nudLutas.Enabled = false;
+            txtBoxrec.Enabled = false;
+            rbMasc.Enabled = false;
+            rbFem.Enabled = false;
+            rbInfantil.Enabled = false;
+            rbIdosos.Enabled = false;
+            rbNecEsp.Enabled = false;
         }
 
         //botao novo
@@ -136,6 +159,48 @@ namespace Boxe
                 sqlCon.Close();
             }
 
+            //esse bloco limpa as caixas apos a adicao de um cadastro
+            tsbNovo.Enabled = true;
+            tsbSalvar.Enabled = false;
+            tsbAlterar.Enabled = false;
+            tsbCancelar.Enabled = false;
+            tsbDelete.Enabled = false;
+            tstIdBuscar.Enabled = true;
+            tsbBuscar.Enabled = true;
+            txtId.Enabled = false;
+            txtNome.Enabled = false;
+            nudIdade.Enabled = false;
+            nudPeso.Enabled = false;
+            nudAltura.Enabled = false;
+            mtbCelular.Enabled = false;
+            txtEmail.Enabled = false;
+            txtCidade.Enabled = false;
+            cbEstado.Enabled = false;
+            nudLutas.Enabled = false;
+            txtBoxrec.Enabled = false;
+            rbMasc.Enabled = false;
+            rbFem.Enabled = false;
+            rbInfantil.Enabled = false;
+            rbIdosos.Enabled = false;
+            rbNecEsp.Enabled = false;
+            txtId.Text = "";
+            txtNome.Text = "";
+            nudIdade.Value = 0;
+            nudPeso.Value = 0;
+            nudAltura.Value = 0;
+            mtbCelular.Text = "";
+            txtEmail.Text = "";
+            txtCidade.Text = "";
+            cbEstado.Text = "";
+            nudLutas.Value = 0;
+            txtBoxrec.Text = string.Empty;
+            rbMasc.Checked = false;
+            rbFem.Checked = false;
+            rbInfantil.Checked = false;
+            rbIdosos.Checked = false;
+            rbNecEsp.Checked = false;
+
+
 
         }
 
@@ -197,7 +262,6 @@ namespace Boxe
                 nudLutas.Text = Convert.ToString(dr["Lutas"]);
                 txtBoxrec.Text = Convert.ToString(dr["Boxrec"]);
 
-
             }
 
             catch (Exception ex)
@@ -209,6 +273,32 @@ namespace Boxe
             {
                 sqlCon.Close();
             }
+
+            tsbNovo.Enabled = false;
+            tsbSalvar.Enabled = false;
+            tsbAlterar.Enabled = true;
+            tsbCancelar.Enabled = true;
+            tsbDelete.Enabled = true;
+            tstIdBuscar.Enabled = true;
+            tsbBuscar.Enabled = true;
+            txtNome.Enabled = true;
+            nudIdade.Enabled = true;
+            nudPeso.Enabled = true;
+            nudAltura.Enabled = true;
+            mtbCelular.Enabled = true;
+            txtEmail.Enabled = true;
+            txtCidade.Enabled = true;
+            cbEstado.Enabled = true;
+            nudLutas.Enabled = true;
+            txtBoxrec.Enabled = true;
+            rbMasc.Enabled = true;
+            rbFem.Enabled = true;
+            rbInfantil.Enabled = true;
+            rbIdosos.Enabled = true;
+            rbNecEsp.Enabled = true;
+            tsbBuscar.Text = "";
+            txtNome.Focus();
+           
 
         }
 
@@ -270,6 +360,46 @@ namespace Boxe
                 sqlCon.Close();
             }
 
+            tsbNovo.Enabled = true;
+            tsbSalvar.Enabled = false;
+            tsbAlterar.Enabled = false;
+            tsbCancelar.Enabled = false;
+            tsbDelete.Enabled = false;
+            tstIdBuscar.Enabled = true;
+            tsbBuscar.Enabled = true;
+            txtId.Enabled = false;
+            txtNome.Enabled = false;
+            nudIdade.Enabled = false;
+            nudPeso.Enabled = false;
+            nudAltura.Enabled = false;
+            mtbCelular.Enabled = false;
+            txtEmail.Enabled = false;
+            txtCidade.Enabled = false;
+            cbEstado.Enabled = false;
+            nudLutas.Enabled = false;
+            txtBoxrec.Enabled = false;
+            rbMasc.Enabled = false;
+            rbFem.Enabled = false;
+            rbInfantil.Enabled = false;
+            rbIdosos.Enabled = false;
+            rbNecEsp.Enabled = false;
+            txtId.Text = "";
+            txtNome.Text = "";
+            nudIdade.Value = 0;
+            nudPeso.Value = 0;
+            nudAltura.Value = 0;
+            mtbCelular.Text = "";
+            txtEmail.Text = "";
+            txtCidade.Text = "";
+            cbEstado.Text = "";
+            nudLutas.Value = 0;
+            txtBoxrec.Text = string.Empty;
+            rbMasc.Checked = false;
+            rbFem.Checked = false;
+            rbInfantil.Checked = false;
+            rbIdosos.Checked = false;
+            rbNecEsp.Checked = false;
+
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
@@ -311,6 +441,46 @@ namespace Boxe
                 {
                     sqlCon.Close();
                 }
+
+                tsbNovo.Enabled = true;
+                tsbSalvar.Enabled = false;
+                tsbAlterar.Enabled = false;
+                tsbCancelar.Enabled = false;
+                tsbDelete.Enabled = false;
+                tstIdBuscar.Enabled = true;
+                tsbBuscar.Enabled = true;
+                txtId.Enabled = false;
+                txtNome.Enabled = false;
+                nudIdade.Enabled = false;
+                nudPeso.Enabled = false;
+                nudAltura.Enabled = false;
+                mtbCelular.Enabled = false;
+                txtEmail.Enabled = false;
+                txtCidade.Enabled = false;
+                cbEstado.Enabled = false;
+                nudLutas.Enabled = false;
+                txtBoxrec.Enabled = false;
+                rbMasc.Enabled = false;
+                rbFem.Enabled = false;
+                rbInfantil.Enabled = false;
+                rbIdosos.Enabled = false;
+                rbNecEsp.Enabled = false;
+                txtId.Text = "";
+                txtNome.Text = "";
+                nudIdade.Value = 0;
+                nudPeso.Value = 0;
+                nudAltura.Value = 0;
+                mtbCelular.Text = "";
+                txtEmail.Text = "";
+                txtCidade.Text = "";
+                cbEstado.Text = "";
+                nudLutas.Value = 0;
+                txtBoxrec.Text = string.Empty;
+                rbMasc.Checked = false;
+                rbFem.Checked = false;
+                rbInfantil.Checked = false;
+                rbIdosos.Checked = false;
+                rbNecEsp.Checked = false;
 
             }
         }
