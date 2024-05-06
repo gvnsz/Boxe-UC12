@@ -15,6 +15,7 @@ namespace Boxe
     public partial class PagIni : Form //Pagina inicial do programa da academia
     {
         Thread t1;
+        Thread t2;
 
         public PagIni()
         {
@@ -127,7 +128,7 @@ namespace Boxe
             }
             else if (rbNecEsp.Checked)
             {
-                respRadio = "Necessidades especiais";
+                respRadio = "PcD";
             }
 
             comando.Parameters.Add("@Id", SqlDbType.Int).Value = int.Parse(txtId.Text);
@@ -272,7 +273,7 @@ namespace Boxe
                                 rbInfantil.Checked = true;
                             else if (dr["TurmaEspecial"].ToString() == "Idosos")
                                 rbIdosos.Checked = true;
-                            else if (dr["TurmaEspecial"].ToString() == "Necessidades Especiais")
+                            else if (dr["TurmaEspecial"].ToString() == "PcD")
                                 rbNecEsp.Checked = true;
                         }
                     }
@@ -345,7 +346,7 @@ namespace Boxe
             }
             else if (rbNecEsp.Checked)
             {
-                respRadio = "Necessidades especiais";
+                respRadio = "PcD";
             }
 
             comando.Parameters.Add("@Id", SqlDbType.Int).Value = int.Parse(txtId.Text);
@@ -583,5 +584,21 @@ namespace Boxe
         {
             Application.Run(new TodosAlunos());
         }
+
+        //botao turmas especiais
+        private void btnTurmasEspeciais_Click(object sender, EventArgs e)
+        {
+            t2 = new Thread(abrirTurmas);
+            t2.SetApartmentState(ApartmentState.STA);
+            t2.Start();
+        }
+
+        private void abrirTurmas(object obj)
+        {
+            Application.Run(new TurmasEspeciais());
+        }
+
+
+
     }
 }

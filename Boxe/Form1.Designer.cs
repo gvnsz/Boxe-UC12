@@ -531,10 +531,10 @@
             this.rbNecEsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbNecEsp.Location = new System.Drawing.Point(3, 29);
             this.rbNecEsp.Name = "rbNecEsp";
-            this.rbNecEsp.Size = new System.Drawing.Size(158, 19);
+            this.rbNecEsp.Size = new System.Drawing.Size(48, 19);
             this.rbNecEsp.TabIndex = 35;
             this.rbNecEsp.TabStop = true;
-            this.rbNecEsp.Text = "Necessidades especiais";
+            this.rbNecEsp.Text = "PcD\r\n";
             this.rbNecEsp.UseVisualStyleBackColor = true;
             this.rbNecEsp.CheckedChanged += new System.EventHandler(this.rbNecEsp_CheckedChanged);
             // 
@@ -558,6 +558,7 @@
             this.btnTurmasEspeciais.TabIndex = 37;
             this.btnTurmasEspeciais.Text = "VISUALIZAR TURMAS ESPECIAIS";
             this.btnTurmasEspeciais.UseVisualStyleBackColor = true;
+            this.btnTurmasEspeciais.Click += new System.EventHandler(this.btnTurmasEspeciais_Click);
             // 
             // panel1
             // 

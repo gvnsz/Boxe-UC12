@@ -63,6 +63,12 @@
     <Compile Include="TodosAlunos.Designer.cs">
       <DependentUpon>TodosAlunos.cs</DependentUpon>
     </Compile>
+    <Compile Include="TurmasEspeciais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TurmasEspeciais.Designer.cs">
+      <DependentUpon>TurmasEspeciais.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,6 +84,9 @@
     </Compile>
     <EmbeddedResource Include="TodosAlunos.resx">
       <DependentUpon>TodosAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TurmasEspeciais.resx">
+      <DependentUpon>TurmasEspeciais.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

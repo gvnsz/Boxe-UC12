@@ -33,7 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTurmasEspeciais = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnExibir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurmasEspeciais)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -44,8 +43,8 @@
             this.cbTurmasEspeciais.Items.AddRange(new object[] {
             "Turma infantil ",
             "Turma para idosos",
-            "Necessidades especiais"});
-            this.cbTurmasEspeciais.Location = new System.Drawing.Point(412, 36);
+            "PcD"});
+            this.cbTurmasEspeciais.Location = new System.Drawing.Point(406, 71);
             this.cbTurmasEspeciais.Name = "cbTurmasEspeciais";
             this.cbTurmasEspeciais.Size = new System.Drawing.Size(226, 21);
             this.cbTurmasEspeciais.TabIndex = 0;
@@ -55,7 +54,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(408, 9);
+            this.label1.Location = new System.Drawing.Point(402, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(230, 24);
             this.label1.TabIndex = 1;
@@ -64,6 +63,7 @@
             // 
             // dgvTurmasEspeciais
             // 
+            this.dgvTurmasEspeciais.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dgvTurmasEspeciais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTurmasEspeciais.Location = new System.Drawing.Point(6, 19);
             this.dgvTurmasEspeciais.Name = "dgvTurmasEspeciais";
@@ -73,6 +73,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.dgvTurmasEspeciais);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 141);
@@ -83,23 +84,11 @@
             this.groupBox1.Text = "TURMAS ESPECIAIS:";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // btnExibir
-            // 
-            this.btnExibir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExibir.Location = new System.Drawing.Point(412, 72);
-            this.btnExibir.Name = "btnExibir";
-            this.btnExibir.Size = new System.Drawing.Size(226, 23);
-            this.btnExibir.TabIndex = 4;
-            this.btnExibir.Text = "EXIBIR";
-            this.btnExibir.UseVisualStyleBackColor = true;
-            this.btnExibir.Click += new System.EventHandler(this.button1_Click);
-            // 
             // TurmasEspeciais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 589);
-            this.Controls.Add(this.btnExibir);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbTurmasEspeciais);
@@ -120,6 +109,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvTurmasEspeciais;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnExibir;
     }
 }
