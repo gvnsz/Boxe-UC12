@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient; //Biblioteca que conecta ao BD
+using System.Threading; //para abrir mais forms
 
 namespace Boxe
 {
     public partial class PagIni : Form //Pagina inicial do programa da academia
     {
+        Thread t1;
+
         public PagIni()
         {
             InitializeComponent();
@@ -565,6 +568,20 @@ namespace Boxe
         private void rbNecEsp_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        //botao para abrir a janela com todos os alunos cadastrados
+        private void btnVerTodos_Click(object sender, EventArgs e)
+        {
+            t1 = new Thread(abrirJanela);
+            t1.SetApartmentState(ApartmentState.STA); 
+            t1.Start();
+        }
+
+        //metodo que abre a janela
+        private void abrirJanela(object obj)
+        {
+            Application.Run(new TodosAlunos());
         }
     }
 }

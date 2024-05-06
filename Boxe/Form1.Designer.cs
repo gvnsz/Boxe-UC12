@@ -547,6 +547,7 @@
             this.btnVerTodos.TabIndex = 36;
             this.btnVerTodos.Text = "VISUALIZAR TODOS OS ALUNOS";
             this.btnVerTodos.UseVisualStyleBackColor = true;
+            this.btnVerTodos.Click += new System.EventHandler(this.btnVerTodos_Click);
             // 
             // btnTurmasEspeciais
             // 
