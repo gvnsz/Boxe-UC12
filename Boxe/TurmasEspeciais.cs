@@ -33,7 +33,7 @@ namespace Boxe
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string turmaSelecionada = cbTurmasEspeciais.SelectedItem.ToString();
-            string query = $"SELECT Nome, Idade, Peso, Altura " +
+            string query = $"SELECT Id, Nome, Idade, Peso, Altura, Celular, Email, Cidade, Estado, Sexo " +
                            $"FROM CadAlunos " +
                            $"WHERE TurmaEspecial = @TurmaSelecionada";
 

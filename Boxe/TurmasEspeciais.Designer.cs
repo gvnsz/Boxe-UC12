@@ -41,8 +41,8 @@
             // 
             this.cbTurmasEspeciais.FormattingEnabled = true;
             this.cbTurmasEspeciais.Items.AddRange(new object[] {
-            "Turma infantil ",
-            "Turma para idosos",
+            "Infantil",
+            "Idosos",
             "PcD"});
             this.cbTurmasEspeciais.Location = new System.Drawing.Point(406, 71);
             this.cbTurmasEspeciais.Name = "cbTurmasEspeciais";
